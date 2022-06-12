@@ -1,0 +1,20 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "Node js file manager implementation",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js -- --username=your_username"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patatarsk/file-manager.git"
+  },
+  "author": "patatarsk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patatarsk/file-manager/issues"
+  },
+  "homepage": "https://github.com/patatarsk/file-manager#readme"
+}
