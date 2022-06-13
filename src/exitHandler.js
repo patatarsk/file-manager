@@ -1,7 +1,7 @@
 import {partingMessage} from './messages.js';
 
 const exitHandler = (username) => {
-  process.stdout.write(partingMessage(username));
+  partingMessage(username);
   process.exit(0);
 };
 

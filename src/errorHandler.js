@@ -1,8 +1,7 @@
 import {errorMessage} from './messages.js';
 
 const errorHandler = ({message}) => {
-  console.error(errorMessage(message));
-  process.exit(1);
+  errorMessage(message);
 };
 
 export default errorHandler;

@@ -1,40 +1,61 @@
 import readline from 'readline';
-import {operationResultMessage, greetingMessage} from './messages.js';
+import os from 'os';
+import EventEmitter from 'events';
+import {operationResultMessage, greetingMessage, currentLocationMessage} from './messages.js';
+import {commandParser} from './commandParser.js';
+import {InvalidInput, OperationFailed} from './errors.js';
 
 class FileManager {
   constructor(username) {
     this.username = username;
     this.input = process.stdin;
-    this.output = process.stdout;
+    this.currentLocaction = os.homedir();
     this.rl = readline.createInterface({
       input: this.input,
     });
+    this.eventEmmiter = new EventEmitter();
+    this.operationResult = this.operationResult.bind(this);
+    this.setLocation = this.setLocation.bind(this);
   }
 
-  async init() {
+  init() {
     try {
       this.greeting();
       this.rl.on('line', (line) => {
-        this.operationResult(line);
+        const { command, args } = commandParser(line);
+        const isEvent = this.eventEmmiter.emit(command, { args, fileManager: this });
+
+        if (!isEvent) {
+          throw new InvalidInput();
+        }
+
       });
     } catch (error) {
-      throw new Error(error);
+      throw new OperationFailed();
     }
   }
 
   greeting() {
-    this.outputWrite(greetingMessage(this.username));
+    greetingMessage(this.username);
+    this.location();
   }
 
   location() {
+    currentLocationMessage(this.currentLocaction);
+  }
+
+  setLocation(location) {
+    this.currentLocaction = location;
+    this.location();
   }
 
   operationResult(result) {
-    this.outputWrite(operationResultMessage(result));
+    operationResultMessage(result);
+    this.location();
   }
 
-  outputWrite(message) {
-    this.output.write(message);
+  addCommand(command, handler) {
+    this.eventEmmiter.on(command, handler);
   }
 }
 

@@ -1,5 +1,5 @@
-export class InvalidOperation extends Error {
-  constructor(message = 'Invalid operation') {
+export class InvalidInput extends Error {
+  constructor(message = 'Invalid input') {
     super(message);
   }
 }
