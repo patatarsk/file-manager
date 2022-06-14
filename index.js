@@ -14,6 +14,8 @@ import { mvCommandHandler } from './src/commands/files/mv.js';
 import { rmCommandHandler } from './src/commands/files/rm.js';
 import { osCommandHandler } from './src/commands/os/os.js';
 import { hashCommandHandler } from './src/commands/hash/hash.js';
+import { compressCommandHandler } from './src/commands/compress/compress.js';
+import { decompressCommandHandler } from './src/commands/compress/decompress.js';
 
 const { username } = parsePrefixedArgs(process.argv, '--');
 
@@ -31,6 +33,8 @@ fileManager.addCommand('mv', mvCommandHandler);
 fileManager.addCommand('rm', rmCommandHandler);
 fileManager.addCommand('os', osCommandHandler);
 fileManager.addCommand('hash', hashCommandHandler);
+fileManager.addCommand('compress', compressCommandHandler);
+fileManager.addCommand('decompress', decompressCommandHandler);
 
 fileManager.init();
 

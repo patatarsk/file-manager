@@ -5,7 +5,7 @@ import { isDir } from '../../utils/isDir.js';
 export const cdCommandHandler = async ({args: [destPath], fileManager: { currentLocaction, setLocation }}) => {
   try {
     const destination =  path.resolve(currentLocaction, destPath);
-    const isDirectory = await isDir(`${destination}`);
+    const isDirectory = await isDir(destination);
 
     if (!isDirectory) {
       throw new OperationFailed();

@@ -4,12 +4,10 @@ import { OperationFailed } from '../../errors.js';
 import { isFile } from '../../utils/isFile.js';
 import { readFileWithStream } from '../../utils/readFileWithStream.js';
 
-export const hashCommandHandler = async ({args, fileManager: { currentLocaction, operationResult }}) => {
-  console.log('args: ', args);
+export const hashCommandHandler = async ({args: [srcPath], fileManager: { currentLocaction, operationResult }}) => {
   try {
     const source =  path.resolve(currentLocaction, srcPath);
     const isFileCheck = await isFile(source);
-    console.log('isFileCheck: ', isFileCheck);
 
     if (!isFileCheck) {
       throw new OperationFailed();

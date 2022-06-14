@@ -7,8 +7,8 @@ export const rnCommandHandler = async ({args: [srcPath, destPath], fileManager: 
   try {
     const source =  path.resolve(currentLocaction, srcPath);
     const destination = path.resolve(currentLocaction, destPath);
-    const isSrcExist = await isExist(`${source}`);
-    const isDestExist = await isExist(`${destination}`);
+    const isSrcExist = await isExist(source);
+    const isDestExist = await isExist(destination);
 
     if (!isSrcExist || isDestExist) {
       throw new OperationFailed();
