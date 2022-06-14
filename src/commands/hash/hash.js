@@ -1,7 +1,7 @@
 import path from 'path';
 import crypto from 'crypto';
 import { OperationFailed } from '../../errors.js';
-import { isFile } from '../../utils/isFile.js';
+import { isFile } from '../../utils/isFileCheck.js';
 import { readFileWithStream } from '../../utils/readFileWithStream.js';
 
 export const hashCommandHandler = async ({args: [srcPath], fileManager: { currentLocaction, operationResult }}) => {

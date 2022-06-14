@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs/promises';
 import { OperationFailed } from '../../errors.js';
-import { isFile } from '../../utils/isFile.js';
+import { isFile } from '../../utils/isFileCheck.js';
 
 export const rmCommandHandler = async ({args: [srcPath], fileManager: { currentLocaction }}) => {
   try {
