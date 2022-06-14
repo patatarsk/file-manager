@@ -1,4 +1,3 @@
-import path from 'path';
 import { OperationFailed } from '../../errors.js';
 import { cpCommandHandler } from './cp.js';
 import { rmCommandHandler } from './rm.js';

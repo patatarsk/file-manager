@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { OperationFailed } from '../../errors.js';
 import { isDir } from '../../utils/isDir.js';
-import { isFile } from '../../utils/isFIle.js';
+import { isFile } from '../../utils/isFile.js';
 
 export const addCommandHandler = async ({args: [fileName], fileManager: { currentLocaction }}) => {
   try {

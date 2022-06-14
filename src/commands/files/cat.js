@@ -1,6 +1,6 @@
 import path from 'path';
 import { OperationFailed } from '../../errors.js';
-import { isFile } from '../../utils/isFIle.js';
+import { isFile } from '../../utils/isFile.js';
 import { readFileWithStream } from '../../utils/readFileWithStream.js';
 
 export const catCommandHandler = async ({args: [filePath], fileManager: { currentLocaction, operationResult }}) => {
