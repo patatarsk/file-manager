@@ -1,7 +1,7 @@
-import {errorMessage} from './messages.js';
+import { errorMessage } from './messages.js';
 
-const errorHandler = ({message}) => {
-  errorMessage(message);
+const errorHandler = (error) => {
+  errorMessage(error.message);
 };
 
 export default errorHandler;

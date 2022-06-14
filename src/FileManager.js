@@ -1,9 +1,9 @@
 import readline from 'readline';
 import os from 'os';
 import EventEmitter from 'events';
-import {operationResultMessage, greetingMessage, currentLocationMessage} from './messages.js';
-import {commandParser} from './commandParser.js';
-import {InvalidInput, OperationFailed} from './errors.js';
+import { operationResultMessage, greetingMessage, currentLocationMessage } from './messages.js';
+import { commandParser } from './commandParser.js';
+import { InvalidInput, OperationFailed } from './errors.js';
 
 class FileManager {
   constructor(username) {

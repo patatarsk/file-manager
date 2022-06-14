@@ -1,4 +1,4 @@
-import {partingMessage} from './messages.js';
+import { partingMessage } from './messages.js';
 
 const exitHandler = (username) => {
   partingMessage(username);

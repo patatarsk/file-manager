@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
-import { OperationFailed } from '../errors.js';
-import { isDir } from '../utils/isDir.js';
+import { OperationFailed } from '../../errors.js';
+import { isDir } from '../../utils/isDir.js';
 
 export const lsCommandHandler = async ({fileManager: { currentLocaction, operationResult }}) => {
   try {

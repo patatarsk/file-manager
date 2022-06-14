@@ -1,6 +1,6 @@
-import { OperationFailed } from '../errors.js';
-import { isDir } from '../utils/isDir.js';
 import path from 'path';
+import { OperationFailed } from '../../errors.js';
+import { isDir } from '../../utils/isDir.js';
 
 export const cdCommandHandler = async ({args: [destPath], fileManager: { currentLocaction, setLocation }}) => {
   try {

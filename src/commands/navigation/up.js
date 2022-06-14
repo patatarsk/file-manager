@@ -1,5 +1,5 @@
 import path from 'path';
-import { OperationFailed } from '../errors.js';
+import { OperationFailed } from '../../errors.js';
 
 export const upCommandHandler = ({fileManager}) => {
   try {
