@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export const readFile = async (path) => {
+export const readFileWithStream = async (path) => {
   return await new Promise((resolve, reject) => {
     try {
       const fileStream = fs.createReadStream(path);

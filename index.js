@@ -13,6 +13,7 @@ import { cpCommandHandler } from './src/commands/files/cp.js';
 import { mvCommandHandler } from './src/commands/files/mv.js';
 import { rmCommandHandler } from './src/commands/files/rm.js';
 import { osCommandHandler } from './src/commands/os/os.js';
+import { hashCommandHandler } from './src/commands/hash/hash.js';
 
 const { username } = parsePrefixedArgs(process.argv, '--');
 
@@ -29,6 +30,7 @@ fileManager.addCommand('cp', cpCommandHandler);
 fileManager.addCommand('mv', mvCommandHandler);
 fileManager.addCommand('rm', rmCommandHandler);
 fileManager.addCommand('os', osCommandHandler);
+fileManager.addCommand('hash', hashCommandHandler);
 
 fileManager.init();
 

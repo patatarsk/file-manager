@@ -1,7 +1,7 @@
 import path from 'path';
 import { OperationFailed } from '../../errors.js';
 import { isFile } from '../../utils/isFIle.js';
-import { readFile } from '../../utils/readFile.js';
+import { readFileWithStream } from '../../utils/readFileWithStream.js';
 
 export const catCommandHandler = async ({args: [filePath], fileManager: { currentLocaction, operationResult }}) => {
   try {
@@ -12,7 +12,7 @@ export const catCommandHandler = async ({args: [filePath], fileManager: { curren
       throw new OperationFailed();
     }
 
-    const data = await readFile(destination);
+    const data = await readFileWithStream(destination);
     operationResult(data);
   } catch (error) {
     throw new OperationFailed();
