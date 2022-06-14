@@ -12,6 +12,7 @@ import { rnCommandHandler } from './src/commands/files/rn.js';
 import { cpCommandHandler } from './src/commands/files/cp.js';
 import { mvCommandHandler } from './src/commands/files/mv.js';
 import { rmCommandHandler } from './src/commands/files/rm.js';
+import { osCommandHandler } from './src/commands/os/os.js';
 
 const { username } = parsePrefixedArgs(process.argv, '--');
 
@@ -27,6 +28,7 @@ fileManager.addCommand('rn', rnCommandHandler);
 fileManager.addCommand('cp', cpCommandHandler);
 fileManager.addCommand('mv', mvCommandHandler);
 fileManager.addCommand('rm', rmCommandHandler);
+fileManager.addCommand('os', osCommandHandler);
 
 fileManager.init();
 
