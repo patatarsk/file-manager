@@ -1,0 +1,1 @@
+export const checkQuotes = (quotes, ...args) => args.every(arg => arg.includes(quotes));
